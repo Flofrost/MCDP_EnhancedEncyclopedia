@@ -4,6 +4,7 @@ summon firework_rocket ~ ~ ~ {Life:1,LifeTime:1,FireworksItem:{id:"firework_rock
 summon item ~ ~ ~ {PickupDelay:0s,Item:{id:"stone",Count:1}}
 data modify entity @e[type=item,sort=nearest,limit=1] Item set from entity @s SelectedItem
 data modify entity @e[type=item,sort=nearest,limit=1] Item.tag merge from block ~ ~ ~ Book.tag
+
 function ee:ench_fix
 item replace entity @s weapon.mainhand with air
 
