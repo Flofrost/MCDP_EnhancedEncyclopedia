@@ -1,0 +1,21 @@
+{
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "weight": 1,
+            "name": "minecraft:written_book",
+            "functions": [
+              {
+                "function": "minecraft:set_nbt",
+                "tag": "{display:{Name:'{\"text\":\"Book of Velocity\",\"color\":\"dark_purple\",\"bold\":true,\"italic\":true}',Lore:['{\"text\":\"\"}','{\"text\":\"Speed +33%\",\"color\":\"blue\"}']},HideFlags:2,EE:[{Type:1b}],AttributeModifiers:[{AttributeName:\"generic.movement_speed\",Name:\"generic.movement_speed\",Amount:0.33,Operation:1,UUID:[I;-672143782,844841684,-1682678627,1140003533]}],title:\"\",author:\"Laplace\",pages:['{\"text\":\"594F5527524520544F4F20534C4F5720\"}']}"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

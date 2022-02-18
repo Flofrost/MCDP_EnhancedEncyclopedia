@@ -1,3 +1,5 @@
+data modify entity @e[type=item,sort=nearest,limit=1] Item.tag.EE append value {Fixed:1b}
+
 ## Armor
 # Netherite
 execute as @e[type=item,sort=nearest,limit=1,nbt={Item:{id:"minecraft:netherite_helmet"}}] run data modify entity @s Item.tag.AttributeModifiers append value {AttributeName:"generic.armor",Name:"generic.armor",Amount:3,Operation:0,UUID:[I;-2134299633,-1483780973,-1695884340,2111475734],Slot:"head"}

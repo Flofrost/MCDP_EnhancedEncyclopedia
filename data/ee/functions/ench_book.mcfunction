@@ -3,10 +3,12 @@ summon firework_rocket ~ ~ ~ {Life:1,LifeTime:1,FireworksItem:{id:"firework_rock
 
 summon item ~ ~ ~ {PickupDelay:0s,Item:{id:"stone",Count:1}}
 data modify entity @e[type=item,sort=nearest,limit=1] Item set from entity @s SelectedItem
-data modify entity @e[type=item,sort=nearest,limit=1] Item.tag.AttributeModifiers append from block ~ ~ ~ Book.tag.AttributeModifiers[]
-data modify entity @e[type=item,sort=nearest,limit=1] Item.tag.EE append from block ~ ~ ~ Book.tag.EE[]
-function ee:ench_fix
-execute as @e[type=item,sort=nearest,limit=1] run data modify entity @s Item.tag.AttributeModifiers[].UUID set from entity @s UUID
+execute as @e[type=item,sort=nearest,limit=1] unless data entity @s Item.tag.EE[].Fixed run function ee:ench_fix
+data modify block ~ ~ ~ Book.tag.AttributeModifiers[].UUID set from entity @e[type=item,sort=nearest,limit=1] UUID
+data modify entity @e[type=item,sort=nearest,limit=1] Item.tag.AttributeModifiers prepend from block ~ ~ ~ Book.tag.AttributeModifiers[]
+data modify entity @e[type=item,sort=nearest,limit=1] Item.tag.EE merge from block ~ ~ ~ Book.tag.EE[]
+data modify entity @e[type=item,sort=nearest,limit=1] Item.tag.HideFlags set value 2
+data modify entity @e[type=item,sort=nearest,limit=1] Item.tag.display.Lore append from block ~ ~ ~ Book.tag.display.Lore[1]
 
 item replace entity @s weapon.mainhand with air
 
